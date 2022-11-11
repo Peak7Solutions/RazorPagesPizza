@@ -1,6 +1,6 @@
 using RazorPagesPizza.Models;
 
-namespace RasorPagesPizza.Services;
+namespace RazorPagesPizza.Services;
 
 public static class PizzaService
 {
@@ -22,10 +22,10 @@ public static class PizzaService
     public static void Add(Pizza pizza)
     {
         pizza.Id = nextId++;
-        Pizza.Add(pizza);
+        Pizzas.Add(pizza);
     }
 
-    public statick void Delete(int id)
+    public static void Delete(int id)
     {
         var pizza = Get(id);
         if (pizza is null)
@@ -34,7 +34,7 @@ public static class PizzaService
         Pizzas.Remove(pizza);
     }
 
-    public static Update(Pizza pizza)
+    public static void Update(Pizza pizza)
     {
         var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
         if (index == -1)
